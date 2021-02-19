@@ -5,10 +5,7 @@ class DosesController < ApplicationController
     @dose.cocktail = @cocktail
   end
 
-  # {"dose"=>{"ingredient_id"=>"104"}, "commit"=>"Add new dose", "cocktail_id"=>"2"}
-
   def create
-    # ingredient = Ingredient.find(params[:dose][:ingredient_id].to_i)
     @dose = Dose.new(dose_params)
     @cocktail = Cocktail.find(params[:cocktail_id])
     @dose.cocktail = @cocktail
