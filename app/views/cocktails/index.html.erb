@@ -1,6 +1,10 @@
 <h1>List of our Tiki Cocktails</h1>
 
 <div>
+  <%= link_to "Create a new Tiki Cocktail", new_cocktail_path %>
+</div>
+
+<div>
   <ul>
     <% @cocktails.each do |cocktail| %>
       <%= cocktail.name %>
