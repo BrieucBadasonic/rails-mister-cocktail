@@ -13,14 +13,14 @@
                <%= link_to "remove dose",
                    dose_path(thing),
                    method: "delete",
-                   data: { confirm: "Are you sure? "}  %>
+                   data: { confirm: "Are you sure?"}  %>
           </li>
         <% end %>
        </ul>
        <div>
-        <%= link_to "Back to the list", cocktails_path %> |
+        <%= link_to "Back to the menu", cocktails_path %> |
         <%= link_to "Add a dose", new_cocktail_dose_path(@cocktail) %> |
-        <%= link_to 'Remove Cocktai', @cocktail_path, method: :delete, data: { confirm: 'Are you sure?' } %>
+        <%= link_to 'Remove Cocktail', @cocktail_path, method: :delete, data: { confirm: 'Are you sure?' } %>
       </div>
 
     </div>
