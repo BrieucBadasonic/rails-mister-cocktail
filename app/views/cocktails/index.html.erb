@@ -1,14 +1,18 @@
-<h1>List of our Tiki Cocktails</h1>
+<div class="title text-center">
+  <h1>List of our Tiki Cocktails</h1>
+</div>
 
 <div>
   <%= link_to "Create a new Tiki Cocktail", new_cocktail_path %>
 </div>
 
 <div>
-  <ul>
+  <ul class="cocktail-list">
     <% @cocktails.each do |cocktail| %>
-      <%= cocktail.name %>
-      <%= link_to "Description", cocktail_path(cocktail) %>
+      <li>
+        <%= cocktail.name %> |
+        <%= link_to "Description", cocktail_path(cocktail) %>
+      </li>
     <% end %>
   </ul>
 </div>
