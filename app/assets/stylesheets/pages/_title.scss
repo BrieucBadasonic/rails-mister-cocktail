@@ -2,11 +2,32 @@
   margin: 24px;
   font-size: 32px;
   font-weight: bold;
-  color: white;
+  color: rgb(39, 58, 70);
   text-shadow: 2px 1px 2px rgba(150, 150, 150, 0.63);
   background-color: rgb(221, 219, 194);
   box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
   text-decoration: none;
 }
 
+.cocktail-form {
+  background-color: rgb(221, 219, 194);
+  box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+  padding: 24px;
+}
 
+.cocktail-link {
+  text-decoration: none;
+  color: rgb(212, 117, 95);
+}
+
+.cocktail-link:hover {
+  text-decoration: none;
+  color: rgb(212, 117, 95);
+}
+
+.form-dose {
+  margin: 24px;
+  padding: 24px;
+  background-color: rgb(221, 219, 194);
+  box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+}

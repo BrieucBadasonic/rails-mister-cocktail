@@ -15,6 +15,7 @@
 
 body {
   background-image: asset-url("tiki_background.jpg");
+  background-size: cover;
 }
 
 .card-category {
@@ -30,4 +31,56 @@ body {
   text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.2);
   border-radius: 5px;
   box-shadow: 0 0 15px rgba(0, 0, 0, 0.2);
+  opacity: 0.75;
+  transition: 0.3s;
 }
+
+.card-category:hover {
+  text-decoration: none;
+  opacity: 1;
+}
+
+.card-trip {
+  overflow: hidden;
+  background: rgb(221, 219, 194);
+  box-shadow: 0 0 15px rgba(0,0,0,0.2);
+}
+
+.card-trip > img {
+  height: 500px;
+  width: 100%;
+  object-fit: cover;
+}
+
+.card-trip h2 {
+  font-size: 16px;
+  font-weight: bold;
+  margin: 0;
+}
+
+.card-trip p {
+  font-size: 12px;
+  opacity: .7;
+  margin: 0;
+}
+
+
+.card-trip .card-trip-infos {
+  padding: 16px;
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-end;
+  position: relative;
+}
+
+.card-trip-infos .card-trip-user {
+  position: absolute;
+  right: 16px;
+  top: -20px;
+  width: 40px;
+}
+
+.cocktail-card-name:hover {
+  color:white !important;
+}
+

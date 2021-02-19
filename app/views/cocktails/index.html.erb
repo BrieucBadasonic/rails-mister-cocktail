@@ -3,27 +3,17 @@
 </div>
 
 <div class="title text-center">
-  <%= link_to "Create a new Tiki Cocktail", new_cocktail_path %>
+  <%= link_to "Create a new Tiki Cocktail", new_cocktail_path, class: "cocktail-link" %>
 </div>
-
-<!-- <div>
-  <ul class="cocktail-list">
-    <% @cocktails.each do |cocktail| %>
-      <li>
-        <%= cocktail.name %> |
-        <%= link_to "Description", cocktail_path(cocktail) %>
-        <%= cl_image_tag cocktail.photo.key, height: 500, width: 650, crop: :fill %>
-      </li>
-    <% end %>
-  </ul>
-</div> -->
 
   <div class="row">
     <% @cocktails.each do |cocktail| %>
       <div class="col-lg-4 my-3">
         <%= link_to cocktail_path(cocktail) do %>
           <div class="card-category" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), url('<%= cl_image_path cocktail.photo.key, height: 800, width: 900, crop: :fill %>')">
-            <%= cocktail.name %>
+            <p class="cocktail-card-name">
+              <%= cocktail.name %>
+            </p>
           </div>
         <% end %>
       </div>
