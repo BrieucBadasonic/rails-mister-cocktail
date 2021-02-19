@@ -17,8 +17,12 @@
           </li>
         <% end %>
        </ul>
+       <div>
         <%= link_to "Back to the list", cocktails_path %> |
-        <%= link_to "Add a dose", new_cocktail_dose_path(@cocktail) %>
+        <%= link_to "Add a dose", new_cocktail_dose_path(@cocktail) %> |
+        <%= link_to 'Remove Cocktai', @cocktail_path, method: :delete, data: { confirm: 'Are you sure?' } %>
+      </div>
+
     </div>
   </div>
 </div>
