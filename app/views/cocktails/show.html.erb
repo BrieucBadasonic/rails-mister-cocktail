@@ -1,29 +1,36 @@
-<div class="title text-center">
-  <h1><%= @cocktail.name %> </h1>
-</div>
+<div class="container">
+  <div class="title text-center">
+    <h1><%= @cocktail.name %> </h1>
+  </div>
 
-<div class="card-trip">
-  <img src='<%= cl_image_path @cocktail.photo.key, height: 800, width: 900 %>' />
-  <div class="card-trip-infos">
-    <div>
-      <ul>
-        <% @cocktail.doses.each do |thing| %>
-          <li> <%= thing.description %>
-               <%= thing.ingredient.name %> |
-               <%= link_to "remove dose",
-                   dose_path(thing),
-                   method: "delete",
-                   data: { confirm: "Are you sure?"}  %>
-          </li>
-        <% end %>
-       </ul>
-       <div>
-        <%= link_to "Back to the menu", cocktails_path %> |
-        <%= link_to "Add a dose", new_cocktail_dose_path(@cocktail) %> |
-        <%= link_to 'Remove Cocktail', @cocktail_path, method: :delete, data: { confirm: 'Are you sure?' } %>
+  <div class="card-trip">
+    <img src='<%= cl_image_path @cocktail.photo.key, height: 800, width: 900 %>' />
+    <div class="card-trip-infos">
+      <div>
+        <ul>
+          <% @cocktail.doses.each do |thing| %>
+            <li> <%= thing.description %>
+                 <%= thing.ingredient.name %> |
+                 <%= link_to "remove dose",
+                     dose_path(thing),
+                     method: "delete",
+                     data: { confirm: "Are you sure?"}  %>
+            </li>
+          <% end %>
+         </ul>
+         <div>
+          <%= link_to "Back to the menu", cocktails_path %> |
+          <%= link_to 'Remove Cocktail', @cocktail_path, method: :delete, data: { confirm: 'Are you sure?' } %>
+        </div>
       </div>
-
     </div>
   </div>
-</div>
 
+  <div class="form-dose">
+    <%= simple_form_for [@cocktail, @dose] do |f| %>
+        <%= f.input :description %>
+        <%= f.association :ingredient %>
+        <%= f.submit "Add new dose" %>
+    <% end %>
+  </div>
+</div>
